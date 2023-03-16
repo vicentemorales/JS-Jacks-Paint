@@ -1,19 +1,30 @@
 function configureListeners() {
-    let images = // select img elements  
+    let images = document.getElementsByTagName('img')  
 
 
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+        // iterate over images and add mouseover event listeners
+            // Changes opcaity when mouse hovers over
+           document.getElementById(images[i].id).addEventListener('mouseover', addOpacity, false)
+           // Changes removes opacity change when mouse leaves
+           document.getElementById(images[i].id).addEventListener('mouseout', removeOpacity, false)
     } 
 }
 
 function addOpacity(event) {
     // add appropriate CSS class
+    // the if statement checks to see if the opacity changing class is present before applying
+    if(!divElement.classList.add("dim")){
+        divElement.classList.add("dim")}
     getProductInfo(event.target.id);     
 }
 
 function removeOpacity(event) {
      //remove appropriate CSS class
+     // The of statement checks to see if the  dim class is has been added and then removes the CSS
+     if(divElement.classList.add("dim")){
+        divElement.classList.removove("dim")}
+     divElement.classList.remove("dim")
 
     let element = document.getElementById('color-price');
         element.textContent = '';
